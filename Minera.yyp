@@ -3,6 +3,7 @@
   "resourceVersion": "1.6",
   "name": "Minera",
   "resources": [
+    {"id":{"name":"spr_crack","path":"sprites/spr_crack/spr_crack.yy",},"order":1,},
     {"id":{"name":"obj_levelgen","path":"objects/obj_levelgen/obj_levelgen.yy",},"order":0,},
     {"id":{"name":"spr_grid","path":"sprites/spr_grid/spr_grid.yy",},"order":0,},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},"order":0,},
