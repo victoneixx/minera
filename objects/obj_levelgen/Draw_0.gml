@@ -7,7 +7,6 @@ for(var xx = velx; xx < cell_w; xx++){
 	}
 }
 
-draw_set_alpha(0.6);
 for(var xx = velx; xx < cell_w; xx++){
 	for(var yy = vely; yy < cell_h; yy++){
 		if(grid_crack[# xx, yy] > 0 && grid_crack[# xx, yy] < 10){
@@ -15,4 +14,3 @@ for(var xx = velx; xx < cell_w; xx++){
 		}
 	}
 }
-draw_set_alpha(1);
