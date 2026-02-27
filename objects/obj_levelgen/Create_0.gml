@@ -22,8 +22,10 @@ for(var xx = velx; xx < cell_w; xx++){
 			grid_id[# xx, yy] = 2;
 		} else if(_chance < 0.87){
 			grid_id[# xx, yy] = 3;
-		} else{
+		} else if(_chance < 0.95){
 			grid_id[# xx, yy] = 4;
+		} else{
+			grid_id[# xx, yy] = 5;
 		}
 	}
 }
