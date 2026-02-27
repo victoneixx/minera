@@ -1,0 +1,1 @@
+draw_text(4, 4, "W: " + string(mx) + " H: " + string(my));

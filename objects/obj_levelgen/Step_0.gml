@@ -15,4 +15,14 @@ if(mx >= 0 && mx < cell_w && my >= 0 && my < cell_h){
 		}
 	} 
 }
-if(grid_crack[# mx, my] >= 10)grid_id[# mx, my] = 0;
+
+
+if(grid_crack[# mx, my] >= 10){
+	if(grid_id[# mx, my] == 1){
+		instance_create_layer(mx*16 + 8, my*16 + 8, layer, obj_ore);
+	}
+	
+	if(grid_crack[# mx, my] >= 10)grid_id[# mx, my] = 0;
+} 
+
+if(keyboard_check_pressed(ord("R"))) game_restart();

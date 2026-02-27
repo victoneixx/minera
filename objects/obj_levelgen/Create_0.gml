@@ -28,4 +28,5 @@ for(var xx = velx; xx < cell_w; xx++){
 			grid_id[# xx, yy] = 5;
 		}
 	}
+	
 }
