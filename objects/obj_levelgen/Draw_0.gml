@@ -14,3 +14,10 @@ for(var xx = velx; xx < cell_w; xx++){
 		}
 	}
 }
+
+
+draw_set_alpha(0.5);
+if(grid_id[# mx, my] > 0){
+	draw_rectangle(mx*cell, my*cell, (mx*cell) + cell - 1, (my*cell) + cell - 1, false);
+}
+draw_set_alpha(1);
