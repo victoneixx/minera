@@ -19,7 +19,15 @@ if(mx >= 0 && mx < cell_w && my >= 0 && my < cell_h){
 
 if(grid_crack[# mx, my] >= 10){
 	if(grid_id[# mx, my] == 1){
-		instance_create_layer(mx*16 + 8, my*16 + 8, layer, obj_ore);
+		instance_create_layer(mx*16 + 8, my*16 + 8, layer, obj_rock);
+	} else if(grid_id[# mx, my] == 2){
+		instance_create_layer(mx*16 + 8, my*16 + 8, layer, obj_coal);
+	}else if(grid_id[# mx, my] == 3){
+		instance_create_layer(mx*16 + 8, my*16 + 8, layer, obj_iron);
+	}else if(grid_id[# mx, my] == 4){
+		instance_create_layer(mx*16 + 8, my*16 + 8, layer, obj_gold);
+	}else if(grid_id[# mx, my] == 5){
+		instance_create_layer(mx*16 + 8, my*16 + 8, layer, obj_diamond);
 	}
 	
 	if(grid_crack[# mx, my] >= 10)grid_id[# mx, my] = 0;
