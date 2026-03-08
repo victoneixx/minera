@@ -2,20 +2,26 @@ mx = mouse_x div cell;
 my = mouse_y div cell;
 if(mx >= 0 && mx < cell_w && my >= 0 && my < cell_h){
 	if(mouse_check_button(mb_left)){
-		if(grid_id[# mx, my] == 1){
-			grid_crack[# mx, my] += 0.5;
-		} else if(grid_id[# mx, my] == 2){
-			grid_crack[# mx, my] += 0.4;
-		} else if(grid_id[# mx, my] == 3){
-			grid_crack[# mx, my] += 0.3;
-		} else if(grid_id[# mx, my] == 4){
-			grid_crack[# mx, my] += 0.2;
-		} else if(grid_id[# mx, my] == 5){
+		if(grid_trash[# mx, my] > 0){
 			grid_crack[# mx, my] += 0.1;
-		}
+			
+            if(grid_crack[# mx, my] >= 10){
+                grid_trash[# mx, my] = 0;
+                grid_crack[# mx, my] = 0;   
+            }
+		} else if(grid_id[# mx, my] > 0){
+			var _dano;
+			switch(grid_id[# mx, my]){
+				case 1: _dano = 0.5; break;
+				case 2: _dano = 0.4; break;
+				case 3: _dano = 0.3; break;
+				case 4: _dano = 0.2; break;
+				case 5: _dano = 0.1; break;
+			}
+			grid_crack[# mx, my] += _dano;
+		} 
 	} 
 }
-
 
 if(grid_crack[# mx, my] >= 10){
 	if(grid_id[# mx, my] == 1){
@@ -32,7 +38,7 @@ if(grid_crack[# mx, my] >= 10){
 	
 	grid_id[# mx, my] = 0;
 	grid_crack[# mx, my] = 0;
-} 
+}
 
 if(keyboard_check_pressed(ord("R"))) game_restart();
 
