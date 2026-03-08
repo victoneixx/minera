@@ -9,20 +9,12 @@ cell_w = room_width div cell;
 cell_h = room_height div cell;
 grid_crack = ds_grid_create(cell_w, cell_h);
 grid_id = ds_grid_create(cell_w, cell_h);
-grid_trash = ds_grid_create(cell_w, cell_h);
 ds_grid_clear(grid_crack, 0);
 ds_grid_clear(grid_id, 0);
 
 for(var xx = velx; xx < cell_w; xx++){
 	for(var yy = vely; yy < cell_h; yy++){
 		grid_crack[# xx, yy] = 0;
-		
-		var _choose = choose(0, 1, 2);
-		if(_choose == 1){
-			grid_trash[# xx, yy] = 1;
-		} else if(_choose == 2){
-			grid_trash = 2;
-		}
 		
 		var _chance = random(1);
 		if(_chance < 0.60){
@@ -36,7 +28,6 @@ for(var xx = velx; xx < cell_w; xx++){
 		} else{
 			grid_id[# xx, yy] = 5;
 		}
-	
 	}
 	
 }
