@@ -30,7 +30,14 @@ if(grid_crack[# mx, my] >= 10){
 		instance_create_layer(mx*16 + 8, my*16 + 8, layer, obj_diamond);
 	}
 	
-	if(grid_crack[# mx, my] >= 10)grid_id[# mx, my] = 0;
+	grid_id[# mx, my] = 0;
+	grid_crack[# mx, my] = 0;
 } 
 
 if(keyboard_check_pressed(ord("R"))) game_restart();
+
+var _keybug = (keyboard_check(vk_control) && keyboard_check(vk_shift)) && keyboard_check_pressed(ord("D"));
+
+if(_keybug){
+	pdebug =! pdebug;
+}

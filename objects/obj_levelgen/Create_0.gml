@@ -1,4 +1,5 @@
 randomize();
+pdebug = false;
 mx = 0;
 my = 0;
 velx = 0;

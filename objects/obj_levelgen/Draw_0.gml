@@ -7,6 +7,7 @@ for(var xx = velx; xx < cell_w; xx++){
 	}
 }
 
+draw_set_alpha(0.8);
 for(var xx = velx; xx < cell_w; xx++){
 	for(var yy = vely; yy < cell_h; yy++){
 		if(grid_crack[# xx, yy] > 0 && grid_crack[# xx, yy] < 10){
@@ -14,10 +15,10 @@ for(var xx = velx; xx < cell_w; xx++){
 		}
 	}
 }
-
-
-draw_set_alpha(0.5);
-if(grid_id[# mx, my] > 0){
-	draw_rectangle(mx*cell, my*cell, (mx*cell) + cell - 1, (my*cell) + cell - 1, false);
-}
 draw_set_alpha(1);
+
+//draw_set_alpha(0.5);
+if(grid_id[# mx, my] > 0){
+	draw_sprite(spr_target, 0, mx*cell, my*cell);
+}
+//draw_set_alpha(1);
