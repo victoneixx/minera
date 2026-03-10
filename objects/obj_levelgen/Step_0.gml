@@ -27,7 +27,8 @@ if(grid_crack[# mx, my] >= 10){
 		case 5: _minerios = obj_diamond; break;
 	}
 	instance_create_layer(mx*16 + 8, my*16 + 8, layer, _minerios);
-	
+	audio_play_sound(snd_broken_stone, 2, 0, , , 1.2);
+	audio_play_sound(snd_particles_stone, 0, 0, 0.1, 0.16, random_range(0.8, 1.2));
 	grid_id[# mx, my] = 0;
 	grid_crack[# mx, my] = 0;
 } 
@@ -38,4 +39,14 @@ var _keybug = (keyboard_check(vk_control) && keyboard_check(vk_shift)) && keyboa
 
 if(_keybug){
 	pdebug =! pdebug;
+}
+
+if(grid_crack[# mx, my] > 0){
+	if(mouse_check_button(mb_left)){
+		snd_delay--;
+		if(snd_delay <= 0){
+			audio_play_sound(snd_mining_stone, 1, 0, 0.3, 0.59, random_range(0.8, 1.2));
+			snd_delay = 12;
+		}
+	}
 }
